@@ -27,13 +27,16 @@ public class SecurityConfig {
 		};
 	}
 	
+	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity
 			.cors(cors->cors.configurationSource(corsConfigurationSource()))
 			.csrf(csrf->csrf.disable())
 			.authorizeHttpRequests(authorizeRequest->{
 				authorizeRequest
-					.anyRequest().permitAll();
+					.anyRequest().permitAll()
+					;
+				
 			})
 			
 			.formLogin(formLogin->{

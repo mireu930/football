@@ -1,6 +1,7 @@
 package com.football.app.court;
 
 import java.sql.Date;
+import java.sql.Time;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,8 +21,8 @@ public class CourtVO {
 	private String courtName;
 	private String location;
 	private Integer fee;
-	private Date openTime;
-	private Date closeTime;
+	private Time openTime;
+	private Time closeTime;
 	private String originName;
 	private String saveName;
 }
