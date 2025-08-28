@@ -5,7 +5,7 @@ export default function Topbar() {
       <div className="logo"><a href="/">Ⓝ 뉴사운드 풋살장</a></div>
       <nav className="bar">
         <a href="/"><FaHome /></a>
-        <a href="/mypage"><FaUser /></a>
+        <a href="/users/SignIn"><FaUser /></a>
       </nav>
     </header>
     )

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.tomcat.util.file.ConfigurationSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -34,6 +35,7 @@ public class SecurityConfig {
 			.csrf(csrf->csrf.disable())
 			.authorizeHttpRequests(authorizeRequest->{
 				authorizeRequest
+					.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 					.anyRequest().permitAll()
 					;
 				
@@ -59,6 +61,8 @@ public class SecurityConfig {
 		
 		corsConfiguration.setAllowedOriginPatterns(List.of("*"));
 		corsConfiguration.setAllowedMethods(List.of("GET","PUT","POST","DELETE","PATCH","OPTIONS"));
+		
+		corsConfiguration.setAllowedHeaders(List.of("*"));
 		
 		UrlBasedCorsConfigurationSource basedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		basedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
