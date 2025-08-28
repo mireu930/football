@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;   /* 위 -> 아래 */
+}
+
+.topbar {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar > a {
+    padding: 10px;
+}
+
+.content {
+  color: black;
+  flex: 1;                  /* 남은 공간을 채움 -> Footer를 바닥으로 밀어줌 */
   text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer {
+  text-align: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topbar a {
+  color: white;           /* 글자와 아이콘 색상 */
+  text-decoration: none;  /* 밑줄 제거 */
+  margin-left: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;               /* 아이콘과 텍스트 간격 */
+  font-size: 20px;        /* 아이콘 크기 조절 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* 마우스 올렸을 때 색상 유지 */
+.topbar a:hover {
+  color: white;
 }
