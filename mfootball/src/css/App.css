@@ -23,6 +23,18 @@ html, body, #root {
   align-items: center;
 }
 
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 30px;  /* 로고와 메뉴 간 간격 */
+}
+
+.mainBar a {
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+}
+
 .bar > a {
     padding: 10px;
 }
