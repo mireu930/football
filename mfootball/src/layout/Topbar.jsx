@@ -5,7 +5,7 @@ export default function Topbar() {
       <div className="leftGroup">
       <div className="logo"><a href="/">Ⓝ 뉴사운드 풋살장</a></div>
       <nav className="mainBar">
-        <a href="#">공지사항</a>
+        <a href="/board/notice/list">공지사항</a>
         <a href="/reservation/home">예약하기</a>
       </nav>
     </div>

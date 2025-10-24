@@ -3,6 +3,8 @@ import Center from "../center";
 import Home from "../reservation/home";
 import SignIn from "../users/SignIn";
 import SignUp from "../users/Signup";
+import List from "../board/notice/list";
+import Detail from "../board/notice/detail";
 
 export default function AppRouter() {
     return (
@@ -14,6 +16,12 @@ export default function AppRouter() {
             </Route>
             <Route path="/reservation/">
                 <Route path="home" element={<Home/>}></Route>
+            </Route>
+            <Route path="/board/">
+                <Route path="notice/">
+                    <Route path="list" element={<List/>}></Route>
+                    <Route path="detail" element={<Detail/>}></Route>
+                </Route>
             </Route>
         </Routes>
     )

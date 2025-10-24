@@ -1,0 +1,175 @@
+/* 페이지 타이틀 */
+.home-title {
+  color: #003366;
+  margin: 10px 0 18px;
+}
+
+/* 캐러셀 */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 340px;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #e9eef7;
+}
+
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 600ms ease, transform 1200ms ease;
+}
+
+.carousel .slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0; right: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.carousel .dot {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff88;
+  cursor: pointer;
+}
+.carousel .dot.on {
+  background: #ffffff;
+}
+
+/* 2열 레이아웃 */
+.home-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  /* 좌:공지 / 우:날씨 */
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 카드 공통 */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 12px;
+}
+
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #003366;
+}
+
+.card-header .more {
+  font-size: 14px;
+  color: #0055aa;
+  text-decoration: none;
+}
+
+/* 공지 테이블 (작게) */
+.notice-table.small {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.notice-table.small th,
+.notice-table.small td {
+  border: 1px solid #e5e5e5;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.notice-table.small thead th {
+  background: #003366;
+  color: #fff;
+  font-weight: 700;
+}
+
+.notice-table.small .col-no { width: 12%; }
+.notice-table.small .col-views { width: 18%; }
+.notice-table.small .col-title { width: auto; }
+
+.notice-table.small .title-cell {
+  text-align: left;
+}
+.notice-table.small .title-cell a {
+  color: #222;
+  text-decoration: none;
+}
+.notice-table.small .title-cell a:hover {
+  text-decoration: underline;
+}
+
+/* 테이블 하단 버튼 오른쪽 정렬 + 5% 폭 */
+.table-footer.right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.btn-register {
+  width: 5%;
+  min-width: 88px; /* 너무 작아지는 것 방지 */
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 9px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-register:hover { background-color: #0055aa; }
+
+/* 날짜 & 날씨 카드 */
+.date-now {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.weather {
+  display: grid;
+  gap: 8px;
+}
+
+.wx-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 6px;
+}
+.wx-row:last-child { border-bottom: none; }
+
+.wx-label { color: #666; }
+.wx-value { font-weight: 600; }
+
+.wx-row.error { color: #c0392b; }
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn-register { width: 30%; }
+}
